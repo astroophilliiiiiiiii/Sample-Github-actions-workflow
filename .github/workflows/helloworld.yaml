@@ -1,0 +1,17 @@
+name: "Hello world workflow"      # name to our workflow
+
+# if somebody pushes anything on main branch or prod branch --- then this workflow will be executed 
+on:           # that helps to register the events 
+  push:
+    branches:
+      - main
+      - production
+
+# what job we wanna execute -- contains certain set of steps 
+jobs:
+  hello_world:                  # name of the job 
+    runs-on: ubuntu-latest                # GitHub Actions ka job kis machine/OS par chalega. 🖥️
+    steps:
+      - name: "Print hello world " # name of the step  ,  list created 
+        run: echo "Hello world"    # what we wanna execute in that step 
+
